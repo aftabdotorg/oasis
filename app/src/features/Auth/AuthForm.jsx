@@ -63,7 +63,7 @@ const AuthForm = () => {
     formData.append("picturePath", values.picture.name);
 
     const savedUserResponse = await fetch(
-      "/auth/signup",
+      "https://oasis-red-two.vercel.app/auth/signup",
       {
         method: "POST",
         body: formData,
@@ -78,7 +78,7 @@ const AuthForm = () => {
   };
 
   const login = async (values, onSubmitProps) => {
-    const loggedInResponse = await fetch("/auth/login", {
+    const loggedInResponse = await fetch("https://oasis-red-two.vercel.app/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(values),

@@ -13,7 +13,7 @@ const FriendListWidget = ({ userId }) => {
 
   const getFriends = async () => {
     const response = await fetch(
-      `/${userId}/friends`,
+      `https://oasis-red-two.vercel.app/${userId}/friends`,
       {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },

@@ -19,7 +19,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
 
   const getUserPosts = async () => {
     const response = await fetch(
-      `/posts/${userId}/posts`,
+      `https://oasis-red-two.vercel.app/posts/${userId}/posts`,
       {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },

@@ -23,7 +23,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
 
   const patchFriend = async () => {
     const response = await fetch(
-      `/${_id}/${friendId}`,
+      `https://oasis-red-two.vercel.app/${_id}/${friendId}`,
       {
         method: "PATCH",
         headers: {
@@ -42,7 +42,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
         <UserImage image={userPicturePath} size="55px" />
         <Box
           onClick={() => {
-            navigate(`/profile/${friendId}`);
+            navigate(`https://oasis-red-two.vercel.app/profile/${friendId}`);
             navigate(0);
           }}
         >
