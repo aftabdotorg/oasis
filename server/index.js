@@ -18,7 +18,7 @@ import Post from "./models/Post.js";
 
 import connectDB from "./db.js";
 import { verifyToken } from "./middlewares/auth.js";
-const PORT = process.env.PORT || 7171;
+const PORT = process.env.PORT ;
 
 // Middlewares config //
 dotenv.config();
