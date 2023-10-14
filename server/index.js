@@ -57,7 +57,7 @@ app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
 app.use("/posts", postRoutes);
 app.get("/health", (req, res) => {
-  res.jon({ status: "ok" });
+  res.json({ status: "ok" });
 });
 
 // Mongoose
