@@ -18,7 +18,7 @@ import Post from "./models/Post.js";
 
 import connectDB from "./db.js";
 import { verifyToken } from "./middlewares/auth.js";
-const PORT = process.env.PORT ;
+const PORT = process.env.PORT || 7171;
 
 // Middlewares config //
 dotenv.config();
@@ -52,6 +52,9 @@ app.post("/posts", verifyToken, upload.single("picture"), createPost);
 app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
 app.use("/posts", postRoutes);
+app.get("/health", (req, res) => {
+  res.jon({ status: "ok" });
+});
 
 // Mongoose
 connectDB();
