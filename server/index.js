@@ -18,18 +18,19 @@ import Post from "./models/Post.js";
 
 import connectDB from "./db.js";
 import { verifyToken } from "./middlewares/auth.js";
-const PORT = process.env.PORT ;
+const PORT = process.env.PORT;
 
 // Middlewares config //
 dotenv.config();
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-app.use(cors({
-  origin:["https://oasis-front.vercel.app"],
-  methods:["POST", "GET", "PATCH", "PUT", "DELETE"],
-  credentials:true
-}));
+app.use(
+  cors({
+    origin: "https://oasis-front.vercel.app",
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(helmet());
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
