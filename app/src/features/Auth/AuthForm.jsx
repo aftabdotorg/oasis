@@ -1,19 +1,19 @@
-import { useState } from "react";
+import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import {
   Box,
   Button,
   TextField,
-  useMediaQuery,
   Typography,
+  useMediaQuery,
   useTheme,
 } from "@mui/material";
-import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import { Formik } from "formik";
-import * as yup from "yup";
-import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { setLogin } from "../../redux/authSlice";
+import { useState } from "react";
 import Dropzone from "react-dropzone";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import * as yup from "yup";
+import { setLogin } from "../../redux/authSlice";
 import FlexBetween from "../FlexBetween/FlexBetween";
 
 const registerSchema = yup.object().shape({
@@ -63,7 +63,7 @@ const AuthForm = () => {
     formData.append("picturePath", values.picture.name);
 
     const savedUserResponse = await fetch(
-      "https://oasis-red-two.vercel.app/auth/signup",
+      "/auth/signup",
       {
         method: "POST",
         body: formData,
@@ -78,7 +78,7 @@ const AuthForm = () => {
   };
 
   const login = async (values, onSubmitProps) => {
-    const loggedInResponse = await fetch("https://oasis-red-two.vercel.app/auth/login", {
+    const loggedInResponse = await fetch("/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(values),

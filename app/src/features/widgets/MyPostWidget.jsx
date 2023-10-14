@@ -17,13 +17,13 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import FlexBetween from "../FlexBetween/FlexBetween";
-import UserImage from "../UserImage/UserImage";
-import WidgetWrapper from "../WidgetWrapper/WidgetWrapper";
 import { useState } from "react";
 import Dropzone from "react-dropzone";
 import { useDispatch, useSelector } from "react-redux";
 import { setposts } from "../../redux/authSlice";
+import FlexBetween from "../FlexBetween/FlexBetween";
+import UserImage from "../UserImage/UserImage";
+import WidgetWrapper from "../WidgetWrapper/WidgetWrapper";
 
 const MyPostWidget = ({ picturePath }) => {
   const dispatch = useDispatch();
@@ -46,7 +46,7 @@ const MyPostWidget = ({ picturePath }) => {
       formData.append("picturePath", image.name);
     }
 
-    const response = await fetch(`https://oasis-red-two.vercel.app/posts`, {
+    const response = await fetch(`/posts`, {
       method: "POST",
       headers: { Authorization: `Bearer ${token}` },
       body: formData,

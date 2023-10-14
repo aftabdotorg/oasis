@@ -1,16 +1,16 @@
 import {
-    EditOutlined,
-    LocationOnOutlined,
-    ManageAccountsOutlined,
-    WorkOutlineOutlined,
+  EditOutlined,
+  LocationOnOutlined,
+  ManageAccountsOutlined,
+  WorkOutlineOutlined,
 } from "@mui/icons-material";
 import { Box, Divider, Typography, useTheme } from "@mui/material";
-import FlexBetween from "../FlexBetween/FlexBetween";
-import UserImage from "../UserImage/UserImage";
-import WidgetWrapper from "../WidgetWrapper/WidgetWrapper";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import FlexBetween from "../FlexBetween/FlexBetween";
+import UserImage from "../UserImage/UserImage";
+import WidgetWrapper from "../WidgetWrapper/WidgetWrapper";
 
 const UserWidget = ({ userId, picturePath }) => {
   const [user, setUser] = useState(null);
@@ -22,7 +22,7 @@ const UserWidget = ({ userId, picturePath }) => {
   const main = palette.neutral.main;
 
   const getUser = async () => {
-    const response = await fetch(`https://oasis-red-two.vercel.app/users/${userId}`, {
+    const response = await fetch(`/users/${userId}`, {
       method: "GET",
       headers: { Authorization: `Bearer ${token}` },
     });
