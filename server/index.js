@@ -18,7 +18,7 @@ import Post from "./models/Post.js";
 
 import connectDB from "./db.js";
 import { verifyToken } from "./middlewares/auth.js";
-const PORT = process.env.PORT || 7171;
+const PORT = process.env.PORT ;
 
 // Middlewares config //
 dotenv.config();
@@ -26,8 +26,8 @@ const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 app.use(cors({
-  origin:[],
-  methods:{"POST", "GET", "PATCH", "PUT", "DELETE"},
+  origin:[""],
+  methods:["POST", "GET", "PATCH", "PUT", "DELETE"],
   credentials:true
 }));
 app.use(express.json());
