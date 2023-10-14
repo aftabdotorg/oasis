@@ -8,7 +8,7 @@ const UserImage = ({ image, size = "60px" }) => {
         width={size}
         height={size}
         alt="user"
-        src={`http://localhost:7171/assets/${image}`}
+        src={`https://oasis-red-two.vercel.app/assets/${image}`}
       />
     </Box>
   );

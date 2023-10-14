@@ -26,7 +26,7 @@ const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 app.use(cors({
-  origin:[""],
+  origin:["https://oasis-front.vercel.app"],
   methods:["POST", "GET", "PATCH", "PUT", "DELETE"],
   credentials:true
 }));

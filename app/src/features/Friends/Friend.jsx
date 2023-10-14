@@ -23,7 +23,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
 
   const patchFriend = async () => {
     const response = await fetch(
-      `http://localhost:7171/users/${_id}/${friendId}`,
+      `https://oasis-red-two.vercel.app/${_id}/${friendId}`,
       {
         method: "PATCH",
         headers: {
