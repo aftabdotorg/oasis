@@ -25,7 +25,11 @@ dotenv.config();
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-app.use(cors());
+app.use(cors({
+  origin:[],
+  methods:{"POST", "GET", "PATCH", "PUT", "DELETE"},
+  credentials:true
+}));
 app.use(express.json());
 app.use(helmet());
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
