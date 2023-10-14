@@ -42,7 +42,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
         <UserImage image={userPicturePath} size="55px" />
         <Box
           onClick={() => {
-            navigate(`https://oasis-red-two.vercel.app/profile/${friendId}`);
+            navigate(`/profile/${friendId}`);
             navigate(0);
           }}
         >
